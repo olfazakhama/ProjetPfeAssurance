@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Encaissement{% endblock %}
+
+{% block body %}
+    <h1>Encaissement</h1>
+<body class="hold-transition sidebar-mini">
+        <div class="content-wrapper">
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ encaissement.id }}</td>
+            </tr>
+            <tr>
+                <th>Montant</th>
+                <td>{{ encaissement.montant }}</td>
+            </tr>
+            <tr>
+                <th>Date</th>
+                <td>{{ encaissement.date ? encaissement.date|date('Y-m-d') : '' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+
+    <a href="{{ path('encaissement_edit', {'id': encaissement.id}) }}">edit</a>
+</div>
+    {{ include('encaissement/_delete_form.html.twig') }}
+{% endblock %}

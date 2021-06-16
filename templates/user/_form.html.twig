@@ -1,0 +1,42 @@
+{{ form_start(form) }}
+
+    
+    
+        
+         
+      
+                               <label>Nom *</label>
+                               {{ form_widget(form.nom) }}
+                       
+                          
+                            <label>Prenom *</label>
+                            {{ form_widget(form.prenom) }}
+                      
+                     
+                   
+                            <label>Roles</label>
+                            {{ form_widget(form.statut) }}
+                     
+                     
+                            <label>Adresse </label>
+                            {{ form_widget(form.adresse) }}
+                  
+                     
+                    <br>
+                             
+                              <label>Email</label>
+<br><br>
+                            {{ form_widget(form.email) }}
+                                                           
+                                                       
+                              <label>Mobile</label>
+                          {{ form_widget(form.mobile) }}
+                                                     
+                                                        
+                                                       
+                                                               
+              <br>                                                  
+                                                            
+        <button style ="font-size: 1.475rem;margin-bottom: 10px" class="btn btn-info btn-sm">{{ button_label|default('Enregistrer') }}  </button>
+  
+    {{ form_end(form) }}

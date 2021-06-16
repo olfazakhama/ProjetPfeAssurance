@@ -1,0 +1,21 @@
+{% extends 'templateAdmine/adminebase.html.twig' %}
+{% block body %}
+    <div class="main-content">
+        <div class="main-content-inner">
+            <div class="breadcrumbs ace-save-state" id="breadcrumbs">
+            </div>
+   
+<body class="hold-transition sidebar-mini">
+        <div class="content-wrapper">
+    {{ include('encaissement/_form.html.twig') }}
+  <br>
+                <a class="btn btn-xs btn-danger" href="{{ path('encaissement_index') }}">
+                    Annuler
+                </a>
+            </div><!-- /.page-content -->
+        </div>
+    </div><!-- /.main-content -->
+{% endblock %}
+
+ 
+

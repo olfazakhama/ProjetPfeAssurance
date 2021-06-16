@@ -1,0 +1,83 @@
+{% extends 'templateAdmine/adminebase.html.twig' %}
+{% block body %}
+    <div class="main-content">
+        <div class="main-content-inner">
+            <div class="breadcrumbs ace-save-state" id="breadcrumbs">
+                <ul class="breadcrumb">
+                    <li>
+                        <i class="ace-icon fa fa-home home-icon"></i>
+                        <a href="#">Home</a>
+                    </li>
+                    <li>
+                        <a href="#">Tables</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="page-content">
+                <div class="page-header">
+                    <h1>
+                        Liste des utilisateurs
+                        <small>
+                            <i class="ace-icon fa fa-angle-double-right"></i>
+                        </small>
+                    </h1>
+
+                </div><!-- /.page-header -->
+                <div class="row">
+                    <div class="col-xs-12">
+                        <!-- PAGE CONTENT BEGINS -->
+                        <div class="row">
+                            <div class="col-xs-12">
+
+                      <table id="example1" class="table table-bordered table-striped">
+
+                        <thead>
+                        <tr>
+                            <th>Nom</th>
+                            <th>Prenom</th>
+                            <th>Statut</th>
+                            <th>Mobile</th>
+                            <th>Adresse</th>
+                            <th>actions</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                         
+                            {% for user in users %}
+                          <tr>
+                            <td class="sorting_1 dtr-control" tabindex="0">{{ user.nom }}</td>
+                            <td>{{ user.prenom }}</td>
+                            <td>{{ user.statut }}</td>
+                            <td>{{ user.mobile }}</td>
+                            <td>{{ user.adresse }}</td>
+                       
+                          
+                            
+                          <td>
+
+                                <div class="hidden-sm hidden-xs btn-group">
+                                    <a class="btn btn-xs btn-danger" href="{{ path('user_delete', {'id': user.id}) }}">
+                                        <i class="ace-icon fa fa-trash-o bigger-120"></i>
+                                    </a>
+                                </div>
+                                <div class="hidden-sm hidden-xs btn-group">
+                                    <a class="btn btn-xs btn-info" href="{{ path('user_edit', {'id': user.id}) }}">
+                                        <i class="ace-icon fa fa-pencil bigger-120"></i>
+                                    </a>
+                                </div>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                        </tbody>
+
+                      </table>
+                            </div><!-- /.span -->
+                        </div><!-- /.row -->
+                        <!-- PAGE CONTENT ENDS -->
+                    </div><!-- /.col -->
+                </div><!-- /.row -->
+            </div><!-- /.page-content -->
+        </div>
+    </div><!-- /.main-content -->
+{% endblock %}
+                          

@@ -1,0 +1,51 @@
+{{ form_start(form) }}
+<label>Nom souscripteur*</label>
+{{ form_widget(form.nom) }}
+<label>Prénom souscripteur </label>
+{{ form_widget(form.prenom) }}
+<label>Age  </label>
+{{ form_widget(form.age) }}
+<br>
+<label>Cin *</label>
+{{ form_widget(form.cin) }}
+<label>EMail </label>
+{{ form_widget(form.email) }}
+<label>Marque voiture *</label>
+{{ form_widget(form.typeVoiture) }}
+<label>Modèle voiture </label>
+{{ form_widget(form.nomVoiture) }}
+<label>Immatriculation *</label>
+{{ form_widget(form.immatriculation) }}
+<label>kilomètrages *</label>
+{{ form_widget(form.kilometre ) }}
+<label>Fréquence de periodicite *</label>
+{{ form_widget(form.FrequencePeriodicite) }}
+<label>Mode de Paiement *</label>
+{{ form_widget(form.modePaiement) }}
+<label>Compagnie *</label>
+{{ form_widget(form.companie) }}
+<label>Garantie *</label>
+{{ form_widget(form.grantie) }}
+<label>Clause *</label>
+{{ form_widget(form.clause) }}
+<label>Type Contrat *</label>
+{{ form_widget(form.typeContrat) }}
+
+<br>
+<label> Télécharger Photo de profil *</label>
+{{ form_widget(form.UploadProfil) }}
+<label> Télécharger Cin *</label>
+{{ form_widget(form.Uploadcin) }}
+<label> Télécharger permis *</label>
+{{ form_widget(form.Uploadpermis) }}
+<label> Télécharger carte grise *</label>
+{{ form_widget(form.UploadCartegrise) }}
+<label> Télécharger Vignette *</label>
+{{ form_widget(form.UploadVignette) }}
+<label> Télécharger Visite technique *</label>
+{{ form_widget(form.UploadVisitetechnique) }}
+
+<br>
+<button style="font-size: 1.475rem;margin-bottom: 10px"class="btn btn-info btn-sm">{{ button_label|default('Envoyer') }}  </button>
+
+{{ form_end(form) }}

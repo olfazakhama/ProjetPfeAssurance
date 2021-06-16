@@ -1,0 +1,24 @@
+{% extends 'templateAdmine/adminebase.html.twig' %}
+{% block body %}
+    <div class="main-content">
+        <div class="main-content-inner">
+            <div class="breadcrumbs ace-save-state" id="breadcrumbs">
+                <ul class="breadcrumb">
+                    <li>
+                        <i class="ace-icon fa fa-home home-icon"></i>
+                        <a href="#">Home</a>
+                    </li>
+                    <li>
+                        <a href="#">Tables</a>
+                    </li>
+                </ul>
+            </div>
+
+{% for message in app.flashes('message') %}
+     <div class="alert alert-success" role="alert">
+      {{message}}
+      </div>
+     {% endfor %}
+     <h1>Nous contacter </h1>
+     {{form(contactForm)}}
+{%endblock%}

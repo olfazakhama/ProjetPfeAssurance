@@ -1,0 +1,23 @@
+{% extends 'templateAdmine/adminebase.html.twig' %}
+
+            {% block body %}
+                <div class="main-content">
+                    <div class="main-content-inner">
+                        <div class="breadcrumbs ace-save-state" id="breadcrumbs">
+                        </div>
+
+                        <div class="page-content">
+                            <h1> Demande Souscription </h1>
+
+                            {{ include('demande_creation_contrat/_form.html.twig') }}
+                            <br>
+                            <br>
+                           
+                      
+                            <a class="btn btn-xs btn-danger" href="{{ path('homeadmin') }}">
+                                Annuler
+                            </a>
+                        </div><!-- /.page-content -->
+                    </div>
+                </div><!-- /.main-content -->
+            {% endblock %}

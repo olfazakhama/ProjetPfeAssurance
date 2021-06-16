@@ -1,0 +1,39 @@
+{% extends 'templateAdmine/adminebase.html.twig' %}
+
+
+ {% block stylesheets %}
+    <link href='fullcalendar/core/main.css' rel='stylesheet' />
+    <link href='fullcalendar/daygrid/main.css' rel='stylesheet' />
+{% endblock %}
+
+{% block title  %} Calendrier {% endblock %}
+{% block stylesheet %}
+
+    <style>
+
+        #calendrier {
+            width: 80%;
+            margin: auto;
+        }
+    </style>
+{% endblock %}
+{% block body %}
+    <div id="calendrier">
+    </div>
+{% endblock %}
+{% block javascripts %}
+    <script src='fullcalendar/core/main.js'></script>
+    <script src='fullcalendar/daygrid/main.js'></script>
+
+    <script>
+        window.onload=() =>{
+            let calendarElt = document.querySelector("#calendrier")
+
+            let calendar = new  FullCalendar.Calendar(calendarElt,{
+                initialView: 'dayGridMonth'
+            })
+            calendar.render()
+        }
+    </script>
+
+{% endblock %}

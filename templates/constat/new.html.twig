@@ -1,0 +1,21 @@
+{% extends 'templateAdmine/adminebase.html.twig' %}
+{% block body %}
+    <div class="main-content">
+        <div class="main-content-inner">
+            <div class="breadcrumbs ace-save-state" id="breadcrumbs">
+            </div>
+            <div class="page-content">
+    <h1>Créer un Constat</h1>
+<body class="hold-transition sidebar-mini">
+        <div class="content-wrapper">
+    {{ include('constat/_form.html.twig') }}
+<br>
+                <a class="btn btn-xs btn-danger" href="{{ path('constat_index') }}">
+                    Annuler
+                </a>
+            </div><!-- /.page-content -->
+        </div>
+    </div><!-- /.main-content -->
+{% endblock %}
+
+ 

@@ -1,0 +1,41 @@
+
+{% extends 'templateAdmine/adminebase.html.twig' %}
+
+{% block body %}
+    <div class="main-content">
+        <div class="main-content-inner">
+            <div class="breadcrumbs ace-save-state" id="breadcrumbs">
+            </div>
+                    
+                <h3 style="padding:1em">Créer un utilisateur</h3>
+          
+         
+            <div class="card-body" style="display: block;">
+                {{ form_start(registrationForm) }}
+                 <label>Nom</label>
+                {{ form_row(registrationForm.nom) }}
+                 <label>Prénom</label>
+                {{ form_row(registrationForm.prenom) }}
+                 <label>Mobile </label>
+                 {{ form_row(registrationForm.mobile) }}
+                 <label>Roles *</label>
+                 {{ form_row(registrationForm.statut) }}
+                 <label>Adresse </label>
+                {{ form_row(registrationForm.adresse) }}
+               <br>
+                {{ form_row(registrationForm.email) }}
+                <br>
+                {{ form_row(registrationForm.plainPassword, {
+                    label: 'Password'
+                }) }}
+         <br>
+                <button type="submit" class="btn">Enregistrer</button>
+                {{ form_end(registrationForm) }}
+         <br>
+                <a class="btn btn-xs btn-danger" href="{{ path('user_index') }}">
+                    Annuler
+                </a>
+            </div><!-- /.page-content -->
+        </div>
+    </div><!-- /.main-content -->
+{% endblock %}

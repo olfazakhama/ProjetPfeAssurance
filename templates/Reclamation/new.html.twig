@@ -1,0 +1,24 @@
+{% extends 'templateAdmine/adminebase.html.twig' %}
+
+{% block body %}
+    <div class="main-content">
+        <div class="main-content-inner">
+            <div class="breadcrumbs ace-save-state" id="breadcrumbs">
+            </div>
+            {% for message in app.flashes('info') %}
+            <div class="alert alert-success">
+                {{ message }}
+            </div>
+            {% endfor %}
+            <div class="page-content">
+                <h1> Créer une réclamation </h1>
+
+                {{ include('Reclamation/_form.html.twig') }}
+                <br>
+                <a class="btn btn-xs btn-danger" href="{{ path('Reclamation_index') }}">
+                    Annuler
+                </a>
+            </div><!-- /.page-content -->
+        </div>
+    </div><!-- /.main-content -->
+{% endblock %}

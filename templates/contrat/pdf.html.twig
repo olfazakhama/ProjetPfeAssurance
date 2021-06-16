@@ -1,0 +1,70 @@
+
+{% block content %}
+<h1 align="center">Contrat Assurance auto </h1>
+<body >
+    <table class="border" width="60%" align="center" >
+        <tbody>
+        
+        <tr>
+            <th>Type contrat</th>
+            <td>{{ contrat.typeContrat }}</td>
+
+        </tr>
+        <tr>
+            <th>Compagnie</th>
+            <td>{{ contrat.companie }}</td>
+        </tr>
+        <tr>
+            <th>DateValidite</th>
+            <td>{{ contrat.dateValidite ? contrat.dateValidite|date('Y-m-d') : '' }}</td>
+        </tr>
+        <tr>
+            <th>Nom</th>
+            <td>{{ contrat.nom }}</td>
+        </tr>
+        <tr>
+            <th>Prenom</th>
+            <td>{{ contrat.prenom }}</td>
+        </tr>
+        <tr>
+            <th>Cin</th>
+            <td>{{ contrat.cin }}</td>
+        </tr>
+        <tr>
+            <th>Age </th>
+            <td>{{ contrat.age}}</td>
+        </tr>
+        <tr>
+            <th>Email</th>
+            <td>{{ contrat.email }}</td>
+        </tr>
+        <tr>
+            <th>Modèle Voiture</th>
+            <td>{{ contrat.nomVoiture }}</td>
+        </tr>
+        <tr>
+            <th>Marque Voiture</th>
+            <td>{{ contrat.typeVoiture }}</td>
+        </tr>
+        <tr>
+            <th>Immatriculation</th>
+            <td>{{ contrat.immatriculation }}</td>
+        </tr>
+        <tr>
+            <th>Kilometrages</th>
+            <td>{{ contrat.kilometre }}</td>
+        </tr>
+
+
+        <tr>
+            <th>Mode de paiement</th>
+            <td>{{ contrat.modePaiement }}</td>
+
+        </tr>
+
+
+        </tbody>
+    </table>
+
+
+{% endblock %}

@@ -1,0 +1,34 @@
+{{ form_start(form) }}
+
+                               <label>Date accident*</label>
+
+{{ form_widget(form.dateAccident) }}
+                  
+                               <label>Lieu accident *</label>
+                               {{ form_widget(form.lieu ) }}
+                         
+
+                       
+                      
+                               <label>Point choc *</label>
+                               {{ form_widget(form.Choc) }}
+                          
+                       
+                            <label>Nom conducteur </label>
+                            {{ form_widget(form.nomConducteur) }}
+                        
+                    
+                               <label>Prénom Conducteur *</label>
+                               {{ form_widget(form.prenomConducteur) }}
+
+<label>Nombre Vehicule *</label>
+{{ form_widget(form.nombreVehicule) }}
+                        
+                          <br>
+        <button  style ="font-size: 1.475rem;margin-bottom: 10px" class="btn btn-info btn-sm">{{ button_label|default('Enregistrer') }}  </button>
+ 
+    {{ form_end(form) }}
+    
+
+
+

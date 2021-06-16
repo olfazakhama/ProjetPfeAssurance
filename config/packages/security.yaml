@@ -1,0 +1,35 @@
+# config/packages/security.yaml
+security:
+    encoders:
+        App\Entity\Users:
+            algorithm: auto
+    firewalls:
+        dev:
+            pattern: ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+        main:
+            anonymous: true
+            guard:
+                authenticators:
+                    - App\Security\UsersAuthenticatotAuthenticator
+            form_login:
+                login_path: app_login
+                check_path: login
+                csrf_token_generator: security.csrf.token_manager
+
+            logout:
+                path: app_logout
+                target: /login
+    providers:
+        # used to reload user from session & other features (e.g. switch_user)
+        app_user_provider:
+            entity:
+                class: App\Entity\Users
+                property: email
+        # used to reload user from session & other features (e.g. switch_user)
+    access_control:
+        - { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/, roles: IS_AUTHENTICATED_ANONYMOUSLY}
+        - { path: ^/, roles: [ROLE_MANAGER,ROLE_ADMIN,ROLE_SOUSCRIPTEUR,ROLE_AGENT]  }
+        - { path: ^/, roles: [ROLE_MANAGER,ROLE_ADMIN,ROLE_SOUSCRIPTEUR,ROLE_AGENT]  }
+

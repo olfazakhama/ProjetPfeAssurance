@@ -1,0 +1,528 @@
+{% extends 'templateAdmine/adminebase.html.twig' %}
+
+            {% block body %}
+                <div class="main-content">
+                <div class="main-content-inner">
+                <div class="breadcrumbs ace-save-state" id="breadcrumbs">
+                    <ul class="breadcrumb">
+                        <li>
+                            <i class="ace-icon fa fa-home home-icon"></i>
+                            <a href="#">Home</a>
+                        </li>
+
+                        <li>
+                            <a href="#">More Pages</a>
+                        </li>
+                        <li class="active">User Profile</li>
+                    </ul><!-- /.breadcrumb -->
+
+                    <div class="nav-search" id="nav-search">
+                        <form class="form-search">
+								<span class="input-icon">
+									<input type="text" placeholder="Search ..." class="nav-search-input"
+                                           id="nav-search-input" autocomplete="off"/>
+									<i class="ace-icon fa fa-search nav-search-icon"></i>
+								</span>
+                        </form>
+                    </div><!-- /.nav-search -->
+                </div>
+
+                <div class="page-content">
+                    <div class="ace-settings-container" id="ace-settings-container">
+                        <div class="btn btn-app btn-xs btn-warning ace-settings-btn" id="ace-settings-btn">
+                            <i class="ace-icon fa fa-cog bigger-130"></i>
+                        </div>
+
+                        <div class="ace-settings-box clearfix" id="ace-settings-box">
+                            <div class="pull-left width-50">
+                                <div class="ace-settings-item">
+                                    <div class="pull-left">
+                                        <select id="skin-colorpicker" class="hide">
+                                            <option data-skin="no-skin" value="#438EB9">#438EB9</option>
+                                            <option data-skin="skin-1" value="#222A2D">#222A2D</option>
+                                            <option data-skin="skin-2" value="#C6487E">#C6487E</option>
+                                            <option data-skin="skin-3" value="#D0D0D0">#D0D0D0</option>
+                                        </select>
+                                    </div>
+                                    <span>&nbsp; Choose Skin</span>
+                                </div>
+
+                                <div class="ace-settings-item">
+                                    <input type="checkbox" class="ace ace-checkbox-2 ace-save-state"
+                                           id="ace-settings-navbar" autocomplete="off"/>
+                                    <label class="lbl" for="ace-settings-navbar"> Fixed Navbar</label>
+                                </div>
+
+                                <div class="ace-settings-item">
+                                    <input type="checkbox" class="ace ace-checkbox-2 ace-save-state"
+                                           id="ace-settings-sidebar" autocomplete="off"/>
+                                    <label class="lbl" for="ace-settings-sidebar"> Fixed Sidebar</label>
+                                </div>
+
+                                <div class="ace-settings-item">
+                                    <input type="checkbox" class="ace ace-checkbox-2 ace-save-state"
+                                           id="ace-settings-breadcrumbs" autocomplete="off"/>
+                                    <label class="lbl" for="ace-settings-breadcrumbs"> Fixed Breadcrumbs</label>
+                                </div>
+
+                                <div class="ace-settings-item">
+                                    <input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-rtl"
+                                           autocomplete="off"/>
+                                    <label class="lbl" for="ace-settings-rtl"> Right To Left (rtl)</label>
+                                </div>
+
+                                <div class="ace-settings-item">
+                                    <input type="checkbox" class="ace ace-checkbox-2 ace-save-state"
+                                           id="ace-settings-add-container" autocomplete="off"/>
+                                    <label class="lbl" for="ace-settings-add-container">
+                                        Inside
+                                        <b>.container</b>
+                                    </label>
+                                </div>
+                            </div><!-- /.pull-left -->
+
+                            <div class="pull-left width-50">
+                                <div class="ace-settings-item">
+                                    <input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-hover"
+                                           autocomplete="off"/>
+                                    <label class="lbl" for="ace-settings-hover"> Submenu on Hover</label>
+                                </div>
+
+                                <div class="ace-settings-item">
+                                    <input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-compact"
+                                           autocomplete="off"/>
+                                    <label class="lbl" for="ace-settings-compact"> Compact Sidebar</label>
+                                </div>
+
+                                <div class="ace-settings-item">
+                                    <input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-highlight"
+                                           autocomplete="off"/>
+                                    <label class="lbl" for="ace-settings-highlight"> Alt. Active Item</label>
+                                </div>
+                            </div><!-- /.pull-left -->
+                        </div><!-- /.ace-settings-box -->
+                    </div><!-- /.ace-settings-container -->
+
+
+                    <div class="page-header">
+                        <h4>
+                            Demande souscription
+
+                            </h1>
+                    </div><!-- /.page-header -->
+
+
+                    <div class="pull-right">
+
+
+                        <div class="btn-toolbar inline middle no-margin">
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hr dotted"></div>
+
+                <div>
+                <div id="user-profile-1" class="user-profile row">
+                <div class="col-xs-12 col-sm-3 center">
+                    <div>
+												<span class="profile-picture">
+                                                <img src="{{ asset('uploads/'~demande_creation_contrat.fileProfil) }}"
+                                                     class="msg-photo" width="150px" height="150px"/>
+                                                </span>
+
+                        <div class="space-4"></div>
+
+                        <div class="width-80 label label-info label-xlg arrowed-in arrowed-in-right">
+                            <div class="inline position-relative">
+                                <a href="#" class="user-title-label dropdown-toggle" data-toggle="dropdown">
+                                    <i class="ace-icon fa fa-circle light-green"></i>
+                                    &nbsp;
+                                    <span class="white">{{ demande_creation_contrat.nom }} {{ demande_creation_contrat.prenom }}</span>
+
+
+                                </a>
+
+                                <ul class="align-left dropdown-menu dropdown-caret dropdown-lighter">
+                                    <li class="dropdown-header"> Change Status</li>
+
+                                    <li>
+                                        <a href="#">
+                                            <i class="ace-icon fa fa-circle green"></i>
+                                            &nbsp;
+                                            <span class="green">Available</span>
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="#">
+                                            <i class="ace-icon fa fa-circle red"></i>
+                                            &nbsp;
+                                            <span class="red">Busy</span>
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="#">
+                                            <i class="ace-icon fa fa-circle grey"></i>
+                                            &nbsp;
+                                            <span class="grey">Invisible</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="space-6"></div>
+
+                    <div class="profile-contact-info">
+                        <div class="profile-contact-links align-left">
+                        </div>
+
+                        <div class="space-6"></div>
+
+                        <div class="profile-social-links align-center">
+                        </div>
+                    </div>
+
+                    <div class="hr hr12 dotted"></div>
+
+
+                    <div class="hr hr16 dotted"></div>
+                </div>
+                <tr>
+
+
+                </tr>
+
+
+                <div class="col-xs-12 col-sm-9">
+
+                <div class="space-2"></div>
+
+
+                <div class="profile-user-info profile-user-info-striped">
+                    <div class="profile-info-row">
+                        <div class="profile-info-name"> CIN</div>
+
+                        <div class="profile-info-value">
+                            <span> {{ demande_creation_contrat.cin }}</span>
+                        </div>
+                    </div>
+
+                    <div class="profile-info-row">
+                        <div class="profile-info-name"> Age </div>
+                        <div class="profile-info-value">
+                            <span> {{ demande_creation_contrat.age }}</span>
+                        </div>
+                    </div>
+
+                    <div class="profile-info-row">
+                        <div class="profile-info-name"> Email</div>
+                        <div class="profile-info-value">
+                            <span>{{ demande_creation_contrat.email }}</span>
+                        </div>
+                    </div>
+                    <div class="profile-info-row">
+                        <div class="profile-info-name"> TypeContrat</div>
+
+                        <div class="profile-info-value">
+                            <span>{{ demande_creation_contrat.typeContrat }}</span>
+                        </div>
+
+
+                    </div>
+
+
+                    <div class="profile-info-row">
+                        <div class="profile-info-name"> Compagnie</div>
+
+                        <div class="profile-info-value">
+                            <span>{{ demande_creation_contrat.companie }}</span>
+                        </div>
+                    </div>
+                    <div class="profile-info-row">
+                        <div class="profile-info-name"> Nom voiture</div>
+                        <div class="profile-info-value">
+                            <span>{{ demande_creation_contrat.nomVoiture }}</span>
+                        </div>
+                    </div>
+
+                    <div class="profile-info-row">
+                        <div class="profile-info-name"> Type voiture</div>
+
+                        <div class="profile-info-value">
+                            <span>{{ demande_creation_contrat.typeVoiture }}</span>
+                        </div>
+                    </div>
+
+                    <div class="profile-info-row">
+                        <div class="profile-info-name"> Kilomètrages</div>
+
+                        <div class="profile-info-value">
+                            <span> {{ demande_creation_contrat.kilometre }}</span>
+                        </div>
+                    </div>
+
+                    <div class="profile-info-row">
+                        <div class="profile-info-name">Immatriculation</div>
+
+                        <div class="profile-info-value">
+                            <span>{{ demande_creation_contrat.immatriculation }}</span>
+                        </div>
+
+                    </div>
+                    <div class="profile-info-row">
+                        <div class="profile-info-name"> Clause</div>
+
+                        <div class="profile-info-value">
+                            <span>{{ demande_creation_contrat.clause }}</span>
+                        </div>
+
+
+                    </div>
+                    <div class="profile-info-row">
+                        <div class="profile-info-name"> Garantie</div>
+
+                        <div class="profile-info-value">
+                            <span>{{ demande_creation_contrat.grantie }}</span>
+                        </div>
+
+
+                    </div>
+                    <div class="profile-info-row">
+
+
+                    </div>
+                    <div class="profile-info-row">
+                        <div class="profile-info-name"> FréquencePériodicité</div>
+
+                        <div class="profile-info-value">
+                            <span>{{ demande_creation_contrat.FrequencePeriodicite }}</span>
+                        </div>
+
+
+                    </div>
+                    <div class="profile-info-row">
+                        <div class="profile-info-name"> ModePaiement</div>
+
+                        <div class="profile-info-value">
+                            <span>{{ demande_creation_contrat.modePaiement }}</span>
+                        </div>
+
+
+                    </div>
+                </div>
+                <br>
+
+                <div class="profile-info-name"> Permis
+                    <span class="profile-picture">
+
+                                                <img src="{{ asset('uploads/'~demande_creation_contrat.filepermis) }}"
+                                                     class="msg-photo" width="150px" height="150px"/>
+                                                </span>
+                </div>
+                <div class="profile-info-name"> Carte Grise
+                    <span class="profile-picture">
+                                                <img src="{{ asset('uploads/'~demande_creation_contrat.Carte_grise) }}"
+                                                     class="msg-photo" width="150px" height="150px"/>
+                                                </span>
+                </div>
+
+                <div class="profile-info-name"> Vignette
+                    <span class="profile-picture">
+                                                <img src="{{ asset('uploads/'~demande_creation_contrat.vignette) }}"
+                                                     class="msg-photo" width="150px" height="150px"/>
+												</span>
+                </div>
+
+                <div class="profile-info-name">Vistite technique
+                    <span class="profile-picture">
+                                                <img src="{{ asset('uploads/'~demande_creation_contrat.Vistite_technique) }}"
+                                                     class="msg-photo" width="150px" height="150px"/>
+												 </span>
+                </div>
+
+
+                <h1>Contrat</h1>
+                <div class="profile-user-info profile-user-info-striped">
+                    <div class="profile-info-row">
+                        <div class="profile-info-name"> DateValidite</div>
+
+                        <div class="profile-info-value">
+                            <span> {{ contrat.dateValidite ? contrat.dateValidite|date('Y-m-d') : '' }}</span>
+                        </div>
+                    </div>
+
+
+                    <div class="profile-info-row">
+                        <div class="profile-info-name"> Nom Souscript</div>
+
+                        <div class="profile-info-value">
+                            <span> {{ contrat.nom }}</span>
+                        </div>
+                    </div>
+                    <div class="profile-info-row">
+                        <div class="profile-info-name"> Prenm Souscript</div>
+
+                        <div class="profile-info-value">
+                            <span> {{ contrat.prenom }}</span>
+                        </div>
+                    </div>
+                    <div class="profile-info-row">
+                        <div class="profile-info-name"> CIN</div>
+
+                        <div class="profile-info-value">
+                            <span> {{ contrat.cin }}</span>
+                        </div>
+                    </div>
+                    <div class="profile-info-row">
+                        <div class="profile-info-name"> Email</div>
+
+                        <div class="profile-info-value">
+                            <span> {{ contrat.email }}</span>
+                        </div>
+                    </div>
+                    <div class="profile-info-row">
+                        <div class="profile-info-name"> Age </div>
+
+                        <div class="profile-info-value">
+                            <span>{{ contrat.age }}</span>
+                        </div>
+                    </div>
+                    <div class="profile-info-row">
+
+                    </div>
+                    <div class="profile-info-row">
+                        <div class="profile-info-name"> Immatriculation</div>
+
+                        <div class="profile-info-value">
+                            <span>{{ contrat.immatriculation }}</span>
+                        </div>
+                    </div>
+                    <div class="profile-info-row">
+                        <div class="profile-info-name"> NomVoiture</div>
+
+                        <div class="profile-info-value">
+                            <span>{{ contrat.nomVoiture }}</span>
+                        </div>
+                    </div>
+                    <div class="profile-info-row">
+                        <div class="profile-info-name"> TypeVoiture</div>
+
+                        <div class="profile-info-value">
+                            <span>{{ contrat.typeVoiture }}</span>
+                        </div>
+                    </div>
+                    <div class="profile-info-row">
+                        <div class="profile-info-name"> TypeContrat</div>
+
+                        <div class="profile-info-value">
+                            <span>{{ contrat.typeContrat }}</span>
+                        </div>
+                    </div>
+                    <div class="profile-info-row">
+                        <div class="profile-info-name"> Clause</div>
+
+                        <div class="profile-info-value">
+                            <span>{{ contrat.clause }}</span>
+                        </div>
+                    </div>
+                    <div class="profile-info-row">
+
+                        <div class="profile-info-name"> Garantie</div>
+
+                        <div class="profile-info-value">
+                            <span>{{ contrat.grantie }}</span>
+                        </div>
+                    </div>
+                    <div class="profile-info-row">
+
+                        <div class="profile-info-name"> Compagnie</div>
+
+                        <div class="profile-info-value">
+                            <span>{{ contrat.companie }}</span>
+                        </div>
+                    </div>
+                    <div class="profile-info-row">
+
+                        <div class="profile-info-name"> ModePaiement</div>
+
+                        <div class="profile-info-value">
+                            <span>{{ contrat.modePaiement }}</span>
+                        </div>
+                    </div>
+                    <div class="profile-info-row">
+                        <div class="profile-info-name"> FrequencePeriodicite</div>
+
+                        <div class="profile-info-value">
+                            <span>{{ contrat.FrequencePeriodicite }}</span>
+                        </div>
+                    </div>
+
+                    <div class="profile-info-row">
+
+                    </div>
+                    <div class="profile-info-row">
+
+                    </div>
+                </div>
+                <div class="row" style="margin-top: 50px">
+                    <div class="col-xs-12">
+                        <a class="btn btn-xs btn-danger" href="{{ path('constat_new', {'id': contrat.id})}}">
+                            Ajouter un constat pour cette voiture
+                        </a>
+                        <table id="example1" class="table table-bordered table-striped">
+
+                            <thead>
+                            <tr>
+                                <th>DateAccident</th>
+                                <th>Lieu</th>
+                                <th>NombreVehicule</th>
+                                <th>PointChoc</th>
+                                <th>NomConducteur</th>
+                                <th>PrenomConducteur</th>
+                                <th>actions</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+
+
+
+                            {% for constat in constats %}
+                                <tr>
+                                    <td class="sorting_1 dtr-control" tabindex="0">{{ constat.dateAccident ? constat.dateAccident|date('Y-m-d') : '' }}}</td>
+
+
+                                    <td>{{ constat.lieu }}</td>
+                                    <td>{{ constat.nombreVehicule }}</td>
+                                    <td>{{ constat.pointChoc }}</td>
+                                    <td>{{ constat.nomConducteur }}</td>
+                                    <td>{{ constat.prenomConducteur }}</td>
+
+                                    <td>
+
+                                        <div class="hidden-sm hidden-xs btn-group">
+                                            <a class="btn btn-xs btn-danger" href="{{ path('constat_delete', {'id': constat.id})  }}">
+                                                <i class="ace-icon fa fa-trash-o bigger-120"></i>
+                                            </a>
+                                        </div>
+                                        <div class="hidden-sm hidden-xs btn-group">
+                                            <a class="btn btn-xs btn-info" href="{{ path('constat_edit', {'id': constat.id}) }}">
+                                                <i class="ace-icon fa fa-pencil bigger-120"></i>
+                                            </a>
+                                        </div>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+
+                        </table>
+                    </div><!-- /.span -->
+                </div><!-- /.row -->
+
+
+            {% endblock %}

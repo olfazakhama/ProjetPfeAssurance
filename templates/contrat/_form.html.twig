@@ -1,0 +1,55 @@
+
+{{ form_start(form) }}
+
+
+
+                               <label>Date validité*</label>
+                               {{ form_widget(form.dateValidite) }}
+                                <br>
+                               <label>Nom souscripteur*</label>
+                               {{ form_widget(form.nom) }}
+                               <label>Prénom souscripteur </label>
+                               {{ form_widget(form.prenom) }}
+                               <label>Age  </label>
+                              {{ form_widget(form.age) }}
+                               <br>
+                               <label>Cin *</label>
+                               {{ form_widget(form.cin) }}
+                               <label>EMail </label>
+                               {{ form_widget(form.email) }}
+
+                                   <label>Compagnie *</label>
+                                   {{ form_widget(form.companie) }}
+                              
+
+                                   <label>Modèle voiture </label>
+                                   {{ form_widget(form.nomVoiture) }}
+                                   <label>Marque voiture *</label>
+                                   {{ form_widget(form.typeVoiture) }}
+                                   <label>Immatriculation *</label>
+                                   {{ form_widget(form.immatriculation) }}
+                                   <label>kilométrages *</label>
+                                   {{ form_widget(form.kilometre) }}
+                                   <label>Clause </label>
+                                   {{ form_widget(form.clause) }}
+
+                              
+                                   <label>Garantie </label>
+                                   {{ form_widget(form.grantie) }}
+                                   <label>Mode de Paiement *</label>
+                                   {{ form_widget(form.modePaiement) }}
+                                   <label>Fréquence de periodicite *</label>
+                                   {{ form_widget(form.FrequencePeriodicite) }}
+                                   <label>typeContrat </label>
+                                   {{ form_widget(form.typeContrat) }}
+
+
+
+                               
+<br>
+       <button style ="font-size: 1.475rem;margin-bottom: 10px" class="btn btn-info btn-sm">{{ button_label|default('Enregistrer') }}  </button>
+
+    
+
+
+{{ form_end(form) }}

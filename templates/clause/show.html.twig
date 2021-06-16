@@ -1,0 +1,40 @@
+{% extends 'templateAdmine/adminebase.html.twig' %}
+{% block body %}
+    <div class="main-content">
+        <div class="main-content-inner">
+            <div class="breadcrumbs ace-save-state" id="breadcrumbs">
+            </div>
+            <div class="page-content">
+    <h1>Clause</h1>
+<body class="hold-transition sidebar-mini">
+        <div class="content-wrapper">
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ clause.id }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ clause.nom }}</td>
+            </tr>
+
+
+            <tr>
+                <th> Montant Franchise</th>
+                <td>{{ clause.franchise }}</td>
+            </tr>
+            <td style="width:10%">
+                <th>Nombre d'année *</th>
+                <td>{{ clause.nbrannee }}</td>
+
+            </td>
+        </tbody>
+    </table>
+
+    <a href="{{ path('clause_index') }}">back to list</a>
+
+    <a href="{{ path('clause_edit', {'id': clause.id}) }}">edit</a>
+</div>
+    {{ include('clause/_delete_form.html.twig') }}
+{% endblock %}

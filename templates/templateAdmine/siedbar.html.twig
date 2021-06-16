@@ -1,0 +1,136 @@
+<div id="sidebar" class="sidebar                  responsive                    ace-save-state">
+    <script type="text/javascript">
+        try{ace.settings.loadState('sidebar')}catch(e){}
+    </script>
+
+    <div class="sidebar-shortcuts" id="sidebar-shortcuts">
+
+    </div><!-- /.sidebar-shortcuts -->
+
+    <ul class="nav nav-list">
+        {% if is_granted('ROLE_SOUSCRIPTEUR') %}
+
+            <li class="">
+                <a href="{{ path('demande_creation_contrat_new') }}">
+                    <i class="menu-icon fa fa-tachometer"></i>
+                    <span class="menu-text">Demande Contrat </span>
+                </a>
+            </li>
+            <li class="">
+                <a href="{{ path('demande_creation_contrat_indexx') }}">
+                    <i class="menu-icon fa fa-tachometer"></i>
+                    <span class="menu-text"> Mes demandes </span>
+                </a>
+            </li>
+
+            <li class="">
+                <a href="{{ path('Reclamation_new') }}">
+                    <i class="menu-icon fa fa-tachometer"></i>
+                    <span class="menu-text"> Nouvelle Réclam </span>
+                </a>
+            </li>
+            <li class="">
+                <a href="{{ path('Reclamation_indexx') }}">
+                    <i class="menu-icon fa fa-tachometer"></i>
+                    <span class="menu-text"> Mes réclamations </span>
+                </a>
+            </li>
+        {% endif %}
+        {% if is_granted('ROLE_ADMIN') %}
+
+
+            <li class="">
+                <a href="{{ path('companie_index') }}">
+                    <i class="menu-icon fa fa-desktop"></i>
+                    <span class="menu-text"> compagnie </span>
+                </a>
+            </li>
+
+            <li class="">
+                <a href="{{ path('type_contrat_index') }}">
+                    <i class="menu-icon fa fa-pencil-square-o"></i>
+                    <span class="menu-text"> Type Contrat </span>
+                </a>
+            </li>
+            <li class="">
+                <a href="{{ path('clause_index') }}">
+                    <i class="menu-icon fa fa-list"></i>
+                    <span class="menu-text"> Clause </span>
+                </a>
+
+            </li>
+            <li class="">
+                <a  href="{{ path('grantie_index') }}">
+                    <i class="menu-icon fa fa fa-list-alt"></i>
+                    <span class="menu-text"> Garantie </span>
+                </a>
+                <b class="arrow"></b>
+            </li>
+            <li class="">
+                <a  href="{{ path('frequence_periodicite_index') }}">
+                    <i class="menu-icon fa fa-list-alt"></i>
+                    <span class="menu-text"> FréquencePeriodicité </span>
+                </a>
+
+            </li>
+            <li class="">
+                <a  href="{{ path('mode_paiement_index') }}">
+                    <i class="menu-icon fa fa fa-list-alt"></i>
+                    <span class="menu-text"> Mode Paiement </span>
+                </a>
+            </li>
+
+
+        {% endif %}
+
+
+        {% if is_granted('ROLE_MANAGER') %}
+
+
+            <li class="">
+                <a   href="{{ path('user_index') }}">
+                    <i class="menu-icon fa fa-tachometer"></i>
+                    <span class="menu-text"> Gestion User </span>
+                </a>
+            </li>
+        {% endif %}
+
+        {% if is_granted('ROLE_AGENT') %}
+
+
+            <li class="">
+                <a href="{{ path('demande_creation_contrat_index') }}">
+                    <i class="menu-icon fa fa-tachometer"></i>
+                    <span class="menu-text">Demandes_Contrats </span>
+                </a>
+            </li>
+            <li class="">
+                <a href="{{ path('contrat_index') }}">
+                    <i class="menu-icon fa fa-tachometer"></i>
+                    <span class="menu-text">Consulation Contrats </span>
+                </a>
+            </li>
+            <li class="">
+                <a href="{{ path('constat_index') }}">
+                    <i class="menu-icon fa fa-tachometer"></i>
+                    <span class="menu-text">Consultation constats </span>
+                </a>
+            </li>
+
+
+            <li class="">
+                <a href="{{ path('Reclamation_index') }}">
+                    <i class="menu-icon fa fa-tachometer"></i>
+                    <span class="menu-text">Ttes les Reclamations </span>
+                </a>
+            </li>
+
+
+        {% endif %}
+    </ul><!-- /.nav-list -->
+
+
+    <div class="sidebar-toggle sidebar-collapse" id="sidebar-collapse">
+        <i id="sidebar-toggle-icon" class="ace-icon fa fa-angle-double-left ace-save-state" data-icon1="ace-icon fa fa-angle-double-left" data-icon2="ace-icon fa fa-angle-double-right"></i>
+    </div>
+</div>

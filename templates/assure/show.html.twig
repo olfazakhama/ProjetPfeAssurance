@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Assure{% endblock %}
+
+{% block body %}
+    <h1>Assure</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ assure.id }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ assure.nom }}</td>
+            </tr>
+            <tr>
+                <th>Prenom</th>
+                <td>{{ assure.prenom }}</td>
+            </tr>
+            <tr>
+                <th>Adresse</th>
+                <td>{{ assure.adresse }}</td>
+            </tr>
+            <tr>
+                <th>Cin</th>
+                <td>{{ assure.cin }}</td>
+            </tr>
+            <tr>
+                <th>Civilite</th>
+                <td>{{ assure.civilite }}</td>
+            </tr>
+            <tr>
+                <th>Tel</th>
+                <td>{{ assure.tel }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('assure_index') }}">back to list</a>
+
+    <a href="{{ path('assure_edit', {'id': assure.id}) }}">edit</a>
+
+    {{ include('assure/_delete_form.html.twig') }}
+{% endblock %}

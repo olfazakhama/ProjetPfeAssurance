@@ -1,0 +1,128 @@
+{% extends 'templateAdmine/adminebase.html.twig' %}
+{% block body %}
+    <div class="main-content">
+        <div class="main-content-inner">
+            <div class="breadcrumbs ace-save-state" id="breadcrumbs">
+                <ul class="breadcrumb">
+                    <li>
+                        <i class="ace-icon fa fa-home home-icon"></i>
+                        <a href="#">Home</a>
+                    </li>
+                    <li>
+                        <a href="#">Tables</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="page-content">
+                <div class="page-header">
+                    <h1>
+                        Mes demandes
+                        <small>
+                            <i class="ace-icon fa fa-angle-double-right"></i>
+                        </small>
+                    </h1>
+                    
+                </div><!-- /.page-header -->
+                <div class="row">
+                    <div class="col-xs-12">
+                        <!-- PAGE CONTENT BEGINS -->
+                        <div class="row">
+                            <div class="col-xs-12">
+
+                      <table id="example1" class="table table-bordered table-striped">
+                                    <thead>
+                                    <tr>
+                                        <th>Nom</th>
+                                        <th>Prenom</th>
+                                        <th>Cin</th>
+                                        <th>Email</th>
+                                        <th>Etat</th>
+
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+
+                                    {% for demande_creation_contrat in demande_creation_contrats %}
+                                        <tr>
+                                            <td class="sorting_1 dtr-control" tabindex="0">{{ demande_creation_contrat.nom }}</td>
+
+
+                                            <td>{{ demande_creation_contrat.prenom }}</td>
+                                            <td>{{ demande_creation_contrat.cin }}</td>
+                                            <td>{{ demande_creation_contrat.email }}</td>
+                                            <td>{{ demande_creation_contrat.etat }}</td>
+
+                                         
+                          </tr>
+                         {% endfor %}
+                        </tbody>
+
+                      </table>
+                            </div><!-- /.span -->
+                        </div><!-- /.row -->
+                        <!-- PAGE CONTENT ENDS -->
+                    </div><!-- /.col -->
+                </div><!-- /.row -->
+            </div><!-- /.page-content -->
+            <div class="page-content">
+                <div class="page-header">
+                    <h1>
+                        Mes Contrats
+                        <small>
+                            <i class="ace-icon fa fa-angle-double-right"></i>
+                        </small>
+                    </h1>
+
+                </div><!-- /.page-header -->
+                <div class="row">
+                    <div class="col-xs-12">
+                        <!-- PAGE CONTENT BEGINS -->
+                        <div class="row">
+                            <div class="col-xs-12">
+
+                                <table id="example1" class="table table-bordered table-striped">
+                                    <thead>
+                                    <tr>
+                                        <th>NomVoiture</th>
+                                        <th>typeVoiture</th>
+                                        <th>typecontrat</th>
+                                        <th>compagnie</th>
+                                        <th>modePaiement</th>
+                                        <th>actions</th>
+
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+
+                                    {% for contrat in contrat %}
+                                        <tr>
+                                            <td class="sorting_1 dtr-control"
+                                                tabindex="0">{{ contrat.0.typeVoiture }}</td>
+
+
+                                            <td>{{ contrat.0.typeVoiture }}</td>
+                                            <td>{{ contrat.0.typeContrat }}</td>
+                                            <td>{{ contrat.0.companie }}</td>
+                                            <td>{{ contrat.0.modePaiement }}</td>
+                                            <td>
+                                                <div class="hidden-sm hidden-xs btn-group">
+                                                    <a class="btn btn-xs btn-danger" href="{{ path('demande_creation_contrat_show_mademende', {'id': contrat.0.id}) }}">
+                                                        <i class="ace-icon fa fa-check-square-o"></i>
+                                                    </a>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    {% endfor %}
+                                    </tbody>
+
+                                </table>
+                            </div><!-- /.span -->
+                        </div><!-- /.row -->
+                        <!-- PAGE CONTENT ENDS -->
+                    </div><!-- /.col -->
+                </div><!-- /.row -->
+            </div><!-- /.page-content -->
+        </div>
+    </div><!-- /.main-content -->
+{% endblock %}
+                          

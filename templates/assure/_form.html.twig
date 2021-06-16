@@ -1,0 +1,28 @@
+{{ form_start(form) }}
+
+                               <label>Nom *</label>
+                               {{ form_widget(form.nom) }}
+                            <label>Prenom *</label>
+                            {{ form_widget(form.prenom) }}
+
+                            <label>Cin</label>
+                            {{ form_widget(form.cin) }}
+
+                            <label>Adresse</label>
+                            {{ form_widget(form.adresse) }}
+
+                                                               <label>téléphone</label>
+                                                               {{ form_widget(form.tel) }}
+                                                               <label>Civilite</label>
+                                                               {{ form_widget(form.civilite) }}
+
+
+
+
+     <br>
+
+        <button style ="font-size: 1.475rem;margin-bottom: 10px" class="btn btn-info btn-sm">{{ button_label|default('Enregistrer') }}  </button>
+
+
+
+{{ form_end(form) }}

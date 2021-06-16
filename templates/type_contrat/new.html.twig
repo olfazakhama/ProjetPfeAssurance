@@ -1,0 +1,21 @@
+{% extends 'templateAdmine/adminebase.html.twig' %}
+{% block body %}
+    <div class="main-content">
+        <div class="main-content-inner">
+            <div class="breadcrumbs ace-save-state" id="breadcrumbs">
+            </div>
+            <div class="page-content">
+    <h1>Ajout type Contrat</h1>
+<body class="hold-transition sidebar-mini">
+        <div class="content-wrapper">
+    {{ include('type_contrat/_form.html.twig') }}
+    <br>
+                <a class="btn btn-xs btn-danger" href="{{ path('type_contrat_index') }}">
+                    Annuler
+                </a>
+            </div><!-- /.page-content -->
+        </div>
+    </div><!-- /.main-content -->
+{% endblock %}
+
+

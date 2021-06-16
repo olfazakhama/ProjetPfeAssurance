@@ -1,0 +1,35 @@
+{% extends 'templateAdmine/adminebase.html.twig' %}
+{% block stylesheet %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.css" integrity="sha512-/zs32ZEJh+/EO2N1b0PEdoA10JkdC3zJ8L5FTiQu82LR9S/rOQNfQN7U59U9BC12swNeRAz3HSzIL2vpp4fv3w==" crossorigin="anonymous">
+    {% block body %}
+      <div class="main-content">
+            <div class="main-content-inner">
+                <div class="breadcrumbs ace-save-state" id="breadcrumbs">
+                    <ul class="breadcrumb">
+                        <li>
+                            <i class="ace-icon fa fa-home home-icon"></i>
+                            <a href="#">Home</a>
+                        </li>
+                        <li class="active">Dashboard</li>
+                    </ul><!-- /.breadcrumb -->
+
+                    <div class="nav-search" id="nav-search">
+                        <form class="form-search">
+								<span class="input-icon">
+									<input type="text" placeholder="Search ..." class="nav-search-input" id="nav-search-input" autocomplete="off" />
+									<i class="ace-icon fa fa-search nav-search-icon"></i>
+								</span>
+                        </form>
+                    </div><!-- /.nav-search -->
+                </div>
+
+                <div class="page-content">
+                    <div class="ace-settings-container" id="ace-settings-container">
+                        <div class="btn btn-app btn-xs btn-warning ace-settings-btn" id="ace-settings-btn">
+                            <i class="ace-icon fa fa-cog bigger-130"></i>
+                        </div>
+
+
+
+    {% endblock %}
+{% endblock %}

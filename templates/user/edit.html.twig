@@ -1,0 +1,22 @@
+
+{% extends 'templateAdmine/adminebase.html.twig' %}
+
+{% block body %}
+    <div class="main-content">
+        <div class="main-content-inner">
+            <div class="breadcrumbs ace-save-state" id="breadcrumbs">
+            </div>
+            <div class="page-content">
+    <h1>Modifier utilisateur</h1>
+
+    {{ include('user/_form.html.twig', {'button_label': 'Modifier'}) }}
+
+     <br>
+                <a class="btn btn-xs btn-danger" href="{{ path('user_index') }}">
+                    Annuler
+                </a>
+            </div><!-- /.page-content -->
+        </div>
+    </div><!-- /.main-content -->
+{% endblock %}
+

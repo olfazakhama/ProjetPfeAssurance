@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Contrat{% endblock %}
+
+{% block body %}
+    <h1>Contrat</h1>
+<body class="hold-transition sidebar-mini">
+        <div class="content-wrapper">
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ contrat.id }}</td>
+            </tr>
+           
+            <tr>
+                <th>DateValidite</th>
+                <td>{{ contrat.dateValidite ? contrat.dateValidite|date('Y-m-d') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Kilometrages</th>
+                <td>{{ demande_creation_contrat.kilometre }}</td>
+            </tr>
+
+            <tr>
+                <th>Immatriculation</th>
+                <td>{{ contrat.immatriculation }}</td>
+            </tr>
+            <tr>
+                <th>NomVoiture</th>
+                <td>{{ demande_creation_contrat.nomVoiture }}</td>
+            </tr>
+            <tr>
+                <th>TypeVoiture</th>
+                <td>{{ demande_creation_contrat.typeVoiture }}</td>
+            </tr>
+
+        </tbody>
+    </table>
+
+    <a href="{{ path('contrat_index') }}">back to list</a>
+
+    <a href="{{ path('contrat_edit', {'id': contrat.id}) }}">edit</a>
+
+            <a class="btn btn-success btn-sm" href="{{path('contrat_pdf',{'id': contrat.id}) }}">imprimer</a>
+
+            {{ include('contrat/_delete_form.html.twig') }}
+    </div>
+{% endblock %}

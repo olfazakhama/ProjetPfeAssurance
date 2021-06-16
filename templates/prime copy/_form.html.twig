@@ -1,0 +1,51 @@
+
+{{ form_start(form) }}
+<div class="row">
+    <div class="col-12 ">
+    
+    
+        
+         
+      
+              
+                           <div class="card card-primary" style="margin:1rem;">
+                            <div class="card-body">
+                               <h3 style="padding:1em">Ajout prime</h3>
+                                 <div class="card-body" style="display: block;">  
+                       <table style="width:100%;border: none;     border-collapse: collapse;
+                              border-spacing: 0;">
+                              
+                       
+                          <tr style="margin-bottom:1em;">
+                         
+                          
+                           <td style="width:10%">
+                               <label>Montant initiale*</label>
+                               {{ form_widget(form.montantInitiale) }}
+                           </td>
+                            <td style="width:10%">
+                               <label>Montant fréquence *</label>
+                               {{ form_widget(form.montantFrequence) }}
+                           </td>
+                       <tr>
+                        <td style="width:10%" >
+                            <label>Année </label>
+                            {{ form_widget(form.annee) }}
+                        </td>  
+                           </tr>  
+                       
+                                                     
+                         </table>
+                        </div>
+                    </div>
+                    </div>
+                   </div>
+                   </div>
+                      <div style="margin-left:50%; margin-right:50%; width:100%">
+        <button style ="font-size: 1.475rem;margin-bottom: 10px" class="btn btn-info btn-sm">{{ button_label|default('Enregistrer') }}  </button>
+   </div>
+    {{ form_end(form) }}
+    
+
+
+{{ form_end(form) }}

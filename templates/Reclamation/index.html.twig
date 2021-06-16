@@ -1,0 +1,90 @@
+{% extends 'templateAdmine/adminebase.html.twig' %}
+{% block body %}
+    <div class="main-content">
+        <div class="main-content-inner">
+            <div class="breadcrumbs ace-save-state" id="breadcrumbs">
+                <ul class="breadcrumb">
+                    <li>
+                        <i class="ace-icon fa fa-home home-icon"></i>
+                        <a href="#">Home</a>
+                    </li>
+                    <li>
+                        <a href="#">Tables</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="page-content">
+                <div class="page-header">
+                    <h1>
+                        Réclamations
+                        <small>
+                            <i class="ace-icon fa fa-angle-double-right"></i>
+                        </small>
+                    </h1>
+                    <br>
+
+                </div><!-- /.page-header -->
+                <div class="row">
+                    <div class="col-xs-12">
+                        <!-- PAGE CONTENT BEGINS -->
+                        <div class="row">
+                            <div class="col-xs-12">
+
+                      <table id="example1" class="table table-bordered table-striped">
+
+                        <thead>
+                        <tr>
+                            <th>Nom</th>
+                            <th>Prenom</th>
+                            <th>Email</th>
+                            <th>Téléphone</th>
+                            <th>Immatriuclation</th>
+                            <th>Destinataire</th>
+                            <th>Etat</th>
+
+
+                            <th>actions</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                         
+                            {% for Reclamation in Reclamation %}
+                          <tr>
+                            <td class="sorting_1 dtr-control" tabindex="0">{{ Reclamation.nom }}</td>
+                            <td>{{ Reclamation.prenom }}</td>
+                              <td>{{ Reclamation.email }}</td>
+                              <td>{{ Reclamation.tel }}</td>
+                            <td>{{ Reclamation.Immatriculation }}</td>
+
+                            <td>{{ Reclamation.Responsable }}</td>
+                              <td>{{ Reclamation.etat }}</td>
+
+                            <td>
+
+                                <div class="hidden-sm hidden-xs btn-group">
+                                    <a class="btn btn-xs btn-danger" href="{{ path('Reclamation_delete', {'id': Reclamation.id}) }}">
+                                        <i class="ace-icon fa fa-trash-o bigger-120"></i>
+                                    </a>
+                                </div>
+                                <div class="hidden-sm hidden-xs btn-group">
+                                    <a class="btn btn-xs btn-danger" href="{{ path('Reclamation_show', {'id': Reclamation.id}) }}">
+                                        <i class="ace-icon fa fa-check-square-o"></i>
+                                    </a>
+                                </div>
+                                
+
+                            </td>
+                        <</tr>
+                        {% endfor %}
+                        </tbody>
+
+                      </table>
+                            </div><!-- /.span -->
+                        </div><!-- /.row -->
+                        <!-- PAGE CONTENT ENDS -->
+                    </div><!-- /.col -->
+                </div><!-- /.row -->
+            </div><!-- /.page-content -->
+        </div>
+    </div><!-- /.main-content -->
+{% endblock %}
